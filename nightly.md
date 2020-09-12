@@ -1,6 +1,6 @@
 # nightlyバージョンのRustインストール
-ただRocketの[Quick Start]("https://rocket.rs/v0.4/guide/quickstart/")を試したかっただけなのに、
-[Rocket公式のnightlyバージョンのインストールガイド]("https://rocket.rs/v0.4/guide/getting-started/")に従ったらエラー出たためメモ。
+ただRocketの[Quick Start](https://rocket.rs/v0.4/guide/quickstart/)を試したかっただけなのに、
+[Rocket公式のnightlyバージョンのインストールガイド](https://rocket.rs/v0.4/guide/getting-started/)に従ったらエラー出たためメモ。
 (macOS 10.15.5)
 
 # 問題
