@@ -1,6 +1,8 @@
 # nightlyバージョンのRustインストール
 ただRocketの[Quick Start](https://rocket.rs/v0.4/guide/quickstart/)を試したかっただけなのに、
+
 [Rocket公式のnightlyバージョンのインストールガイド](https://rocket.rs/v0.4/guide/getting-started/)に従ったらエラー出たためメモ。
+
 (macOS 10.15.5)
 
 # 問題
@@ -9,11 +11,12 @@
 # 解決策
 
 1.[ここ](https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html)でrustupのtoolchainの最新版を確認。
+
 2.`rustup default nightly`の代わりに以下のコマンドを実行。
 
-`rustup toolchain install nightly-20xx-yy-zz`
+	`rustup toolchain install nightly-20xx-yy-zz`
 
-`rustup default nightly-20xx-yy-zz-x86_64-apple-darwin`
+	`rustup default nightly-20xx-yy-zz-x86_64-apple-darwin`
 
 これでOK!
 
@@ -130,12 +133,12 @@ toolchainのリストを確認してみると
 stable-x86_64-apple-darwing
 ```
 確かにnightly版が入っていない。
-githubに同様の[issue](https://github.com/rust-lang/rust/issues/46391)が上がっていたので試してみる。
-1.exec `rustup self uninstall`
+
+githubに同様の[issue](https://github.com/rust-lang/rust/issues/46391)が上がっていたので試してみる(デフォルトでnightlyをいれる)。
 
 それでもうまくいかない...
 
-色々探していると、ある[issue](https://github.com/rust-lang/rust/issues/55571)を見つける。
+さらに色々探していると、ある[issue](https://github.com/rust-lang/rust/issues/55571)を見つける。
 
 [ここ](https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html)でrustupのtoolchainを確認できるらしい。
 
