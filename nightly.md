@@ -1,6 +1,6 @@
 # nightlyバージョンのRustインストール
-ただRocketの[Quick Start][https://rocket.rs/v0.4/guide/quickstart/]を試したかっただけなのに、
-[Rocket公式のnightlyバージョンのインストールガイド][https://rocket.rs/v0.4/guide/getting-started/]に従ったらエラー出たためメモ。
+ただRocketの[Quick Start]["https://rocket.rs/v0.4/guide/quickstart/"]を試したかっただけなのに、
+[Rocket公式のnightlyバージョンのインストールガイド]["https://rocket.rs/v0.4/guide/getting-started/"]に従ったらエラー出たためメモ。
 (macOS 10.15.5)
 
 # 問題
@@ -8,22 +8,21 @@
 
 # 解決策
 
-1.[ここ][https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html]でrustupのtoolchainの最新版を確認。
+1.[ここ]["https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html"]でrustupのtoolchainの最新版を確認。
 2.`rustup default nightly`の代わりに以下のコマンドを実行。
 
-`
->rustup toolchain install nightly-20xx-yy-zz
->rustup default nightly-20xx-yy-zz-x86_64-apple-darwin
-`
+`rustup toolchain install nightly-20xx-yy-zz`
+`rustup default nightly-20xx-yy-zz-x86_64-apple-darwin`
 
 これでOK!
 
 # 記録
 
 公式ドキュメントに従い以下のコマンドでインストール
-`curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh`
 
 ```
+>curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
 info: downloading installer
 
 Welcome to Rust!
@@ -130,17 +129,22 @@ toolchainのリストを確認してみると
 stable-x86_64-apple-darwing
 ```
 確かにnightly版が入っていない。
-githubに同様の[issue][https://github.com/rust-lang/rust/issues/46391]が上がっていたので試してみる。
+githubに同様の[issue]["https://github.com/rust-lang/rust/issues/46391"]が上がっていたので試してみる。
 1.exec `rustup self uninstall`
 
 それでもうまくいかない...
+
 色々探していると、ある[issue][https://github.com/rust-lang/rust/issues/55571]を見つける。
-[ここ][https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html]でrustupのtoolchainを確認できるらしい。
+
+[ここ]["https://rust-lang.github.io/rustup-components-history/x86_64-apple-darwin.html"]でrustupのtoolchainを確認できるらしい。
+
 どうやら今日(2020/09/12)のバージョンはmissingでLast availableが昨日(2020/09/11)になっている。
-[公式ガイド][https://doc.rust-lang.org/edition-guide/rust-2018/rustup-for-managing-rust-versions.html]に従い昨日の日付のtoolchainをインストール。
+
+[公式ガイド]["https://doc.rust-lang.org/edition-guide/rust-2018/rustup-for-managing-rust-versions.html"]に従い昨日の日付のtoolchainをインストール。
 
 ```
 >rustup toolchain install nightly-2020-09-11
+
 info: syncing channel updates for 'nightly-2020-09-11-x86_64-apple-darwin'
 info: latest update on 2020-09-11, rust version 1.48.0-nightly (a1947b3f9 2020-09-10)
 info: downloading component 'cargo'
@@ -171,12 +175,15 @@ info: checking for self-updates
 
 ```
 > rustup default nightly-2020-09-11-x86_64-apple-darwin
+
 info: using existing install for 'nightly-2020-09-11-x86_64-apple-darwin'
 info: default toolchain set to 'nightly-2020-09-11-x86_64-apple-darwin'
 
   nightly-2020-09-11-x86_64-apple-darwin unchanged - rustc 1.48.0-nightly (a1947b3f9 2020-09-10)
 
 ```
+
+Rocketの[Quick Start]["https://rocket.rs/v0.4/guide/quickstart/"]を試してみる。
 
 ```
 >git clone https://github.com/SergioBenitez/Rocket
@@ -188,4 +195,4 @@ info: default toolchain set to 'nightly-2020-09-11-x86_64-apple-darwin'
 ```
 うまくいった!!!!
 
-詳しくは調べていないが、nightlyの最新版がunavalilabeだったのが原因ぽい?
+どうやら、nightlyの最新版がunavalilabeだったのが原因ぽい?
