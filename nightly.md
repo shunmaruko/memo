@@ -7,6 +7,13 @@
 
 # 問題
 最新のnightlyバージョンのRustがインストールできない。
+```
+>rustup default nightly
+info: syncing channel updates for 'nightly-x86_64-apple-darwin'
+info: latest update on 2020-09-12, rust version 1.48.0-nightly (99111606f 2020-09-11)
+info: default toolchain set to 'nightly-x86_64-apple-darwin'
+  nightly-x86_64-apple-darwin unchanged - (toolchain not installed)
+```
 
 # 解決策
 
